@@ -18,6 +18,8 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
+		CowTimer cow = new CowTimer();
+		cow.setTime(2);
 
 	}
 
@@ -33,6 +35,8 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60
 		 * seconds using Thread.sleep(int milliseconds).
 		 */
+		System.out.println();
+		 Thread.sleep(6000);
 
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo
