@@ -54,17 +54,21 @@ public class SimonSays extends KeyAdapter {
     		points++;
     		speak("You are correct");
     	}
-    	else {
-    		if(simon == false && keyCode != imageIndex) {
+    	if(simon == false && keyCode != imageIndex) {
     		speak("You are correct");
     		points++;
-    		}
-    		else {
-    			speak("Game over");
+    	}
+    if(simon == false && keyCode == imageIndex) {
+    			speak("Ha ha! You suck! Game over");
     			JOptionPane.showMessageDialog(null, "Your score was " + points);
     			System.exit(0);
     		}
-    	}
+    if(simon == true && keyCode != imageIndex) {
+		speak("Game over");
+		JOptionPane.showMessageDialog(null, "Your score was " + points);
+		System.exit(0);
+	}
+    	
     	//18.   if the keyCode doesn't match the imageIndex and "Simon didn't say..."  increase their score	
     	//19. Use the speak method to tell the user if they were correct or not
     	//13. increment tries by 1
@@ -103,6 +107,7 @@ public class SimonSays extends KeyAdapter {
 	int num = r.nextInt(100);
 	if (num > 50) {
 	speak("Simon says press this key");
+	simon = true;
 	}
 	else {
 		speak("Press this key");
